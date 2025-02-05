@@ -38,6 +38,11 @@
           </button>
         </div>
 
+        <!-- Indicador de carregamento substituindo a lista de amigos -->
+        <div id="carregando" class="carregando" style="display: none;">
+          <div class="spinner"></div> <!-- Animação de carregamento -->
+        </div>
+
         <ul
           id="listaAmigos"
           class="name-list"
@@ -48,7 +53,7 @@
 
         <div class="button-container">
           <button
-            class="button-draw"
+            class="sortearAmigo"
             onclick="sortearAmigo()"
             aria-label="Sortear amigo secreto"
           >
@@ -59,15 +64,23 @@
             Sortear amigo
           </button>
           <button
-            class="button-draw"
+            class="reiniciarSorteio"
             onclick="reiniciarSorteio()"
             aria-label="Reiniciar o sorteio"
           >
             <img src="assets/reset-icon.png" alt="Ícone para reiniciar" />
             Reiniciar Sorteio
           </button>
+        </button>
+        <button
+        class="refazerSorteio"
+        onclick="refazerSorteio()"
+        aria-label="Refazer o sorteio com a mesma lista"
+      >
+        Refazer Sorteio
+      </button>
         </div>
-
+        
         <!-- Select para escolher quem será excluído do sorteio -->
         <div class="select-group">
           <label for="excluirSorteio"
@@ -102,8 +115,6 @@
             aria-label="LinkedIn"
           >
             <img src="assets/linkedin.png" alt="Ícone do LinkedIn" />
-          </a>
-
           </a>
         </div>
       </div>
