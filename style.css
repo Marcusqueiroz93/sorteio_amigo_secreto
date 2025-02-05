@@ -6,7 +6,7 @@
   --color-button-hover: #e55720;
   --color-white: #ffffff;
   --color-text: #000000;
-  --color-text-footer:#ffffff;
+  --color-text-footer: #ffffff;
   --color-background-footer: #171717; /* Cor de fundo do rodapé */
   --color-border: #ddd; /* Cor da borda */
 }
@@ -171,7 +171,7 @@ ul {
   text-align: center;
 }
 
-.button-draw {
+.sortearAmigo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,11 +185,11 @@ ul {
   max-width: 240px;
 }
 
-.button-draw img {
+.sortearAmigo img {
   margin-right: 40px;
 }
 
-.button-draw:hover {
+.sortearAmigo:hover {
   background-color: var(--color-button-hover);
 }
 
@@ -217,4 +217,127 @@ ul {
 .select-group select:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+.reiniciarSorteio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 10px 20px;
+  color: var(--color-white);
+  background-color: var(--color-button);
+  font-size: 16px;
+  gap: 8px;
+  flex: 1;
+  max-width: 240px;
+}
+
+.reiniciarSorteio img {
+  margin-right: 40px;
+}
+
+.reiniciarSorteio:hover {
+  background-color: var(--color-button-hover);
+}
+.refazerSorteio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 10px 20px;
+  color: var(--color-white);
+  background-color: var(--color-button);
+  font-size: 16px;
+  gap: 8px;
+  flex: 1;
+  max-width: 240px;
+}
+
+.refazerSorteio img {
+  margin-right: 40px;
+}
+
+.refazerSorteio:hover {
+  background-color: var(--color-button-hover);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; /* Garante que o botão não possa ser clicado */
+}
+/* Estilo para o indicador de carregamento */
+
+/* Estilo para o círculo girando (spinner) */
+
+.carregando {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  color: #0000ff;
+}
+.carregando:before,
+.carregando:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 3s spin linear infinite;
+}
+.carregando:after {
+  color: #070707;
+  transform: rotateY(70deg);
+  animation-delay: 0.2s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
 }
